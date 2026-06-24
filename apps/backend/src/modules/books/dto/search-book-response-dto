@@ -1,0 +1,9 @@
+export class SearchBookResponseDto {
+  id!: string;
+  title!: string;
+  authors!: string[];
+  thumbnail?: string;
+  publishedDate?: string;
+  categories?: string[];
+  rating?: number;
+}

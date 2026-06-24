@@ -5,9 +5,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { HealthModule } from './modules/health/health.module';
 import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { BooksModule } from './modules/books/books.module';
 
 @Module({
   imports: [
+    BooksModule,
     ConfigModule.forRoot({
       isGlobal: true,
     }),
@@ -26,6 +28,7 @@ import { AuthModule } from './modules/auth/auth.module';
     HealthModule,
     UsersModule,
     AuthModule,
+    BooksModule
   ],
 })
-export class AppModule { }
+export class AppModule {}
