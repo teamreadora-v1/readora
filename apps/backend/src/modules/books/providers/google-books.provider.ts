@@ -17,4 +17,13 @@ export class GoogleBooksProvider {
     console.log('response', response.data);
     return response.data;
   }
+
+  async getBookById(bookId: string) {
+    const URL: string =
+      `https://www.googleapis.com/books/v1/volumes/${bookId}` +
+      `?key=${process.env.GOOGLE_BOOKS_API_KEY}`;
+
+    const response = await firstValueFrom(this.httpService.get(URL));
+    return response.data;
+  }
 }
