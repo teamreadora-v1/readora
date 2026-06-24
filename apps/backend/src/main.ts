@@ -17,6 +17,8 @@ async function bootstrap() {
     }),
   );
 
+  // app.useGlobalInterceptors(new ResponseInterceptor());
+
   const config = new DocumentBuilder()
     .setTitle('Readora API')
     .setDescription('AI Powered Book Discovery Platform')
@@ -33,8 +35,12 @@ async function bootstrap() {
 
   await app.listen(process.env.PORT ?? 3000);
 
-  console.log(`Application running on: http://localhost:3000`);
-  console.log(`Swagger running on: http://localhost:3000/api`);
+  console.log(
+    `Application running on: http://localhost:${process.env.PORT ?? 3000}`,
+  );
+  console.log(
+    `Swagger running on: http://localhost:${process.env.PORT ?? 3000}/api`,
+  );
 }
 
 bootstrap();
